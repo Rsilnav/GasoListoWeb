@@ -2,5 +2,13 @@ extends layout
 
 block content
 	div
-		a(id='sender')='Send a Message'
+		.ui.icon.input
+			input(id='cp', type="text", placeholder="Tu codigo postal", name="asd")
+			i.search.icon
+		button.ui.button(id='buscar')
+			| Enviar
+
+			
 		ul(id='receiver')
+
+		

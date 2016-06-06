@@ -10,6 +10,15 @@ $(document).ready(function() {
   });
 
   socket.on('server_message', function(data){
-   $('#receiver').append('<li>' + data + '</li>');  
+   $('#receiver').append('<li>' + data[0] + ' ' + data[1] +'</li>');  
   });
+
+  $('#buscar').bind('click', function() {
+  	var texto = $('#cp').val();
+  	$('#receiver').empty();
+  	console.log(texto);
+   	socket.emit('buscar', texto);
+
+  });
+
 });
